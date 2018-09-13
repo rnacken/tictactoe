@@ -6,3 +6,4 @@ info@nacken.ru
 
 ## Tasks
 * yarn start - start dev server and compile js
+* yarn build - build production 
