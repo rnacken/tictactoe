@@ -1,0 +1,36 @@
+.Tile {
+  position: relative;
+}
+.tile-content {
+  position: relative;
+  height: 100%; width: 100%;
+  background-color: lightgray;
+  transition: background-color 200ms;
+  cursor: pointer;
+}
+.tile-content--:hover {
+  background-color: #ddd;
+}
+.tile-content--cross {
+  background-color: tomato;
+}
+.tile-content--cross:after {
+    position: absolute;
+    top: 20px; left: 20px;
+    font-family: "Material Icons";
+    content: "\e5cd";
+    font-size: 60px;
+}
+.tile-content--circle {
+  background-color: lightblue;
+}
+.tile-content--circle:after {
+    position: absolute;
+    top: 20px; left: 20px;
+    font-family: "Material Icons";
+    content: "\e836";
+    font-size: 60px;
+}
+.tile-content--game-end-true {
+  background-color: lime;
+}
