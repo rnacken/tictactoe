@@ -1,0 +1,42 @@
+.toasts {
+  position: fixed;
+  max-width: 400px;
+  bottom: 24px;
+  right: 24px;
+}
+
+.toast {
+  display: flex;
+  align-items: flex-start;
+  background-color: gray;
+  font-weight: 200;
+  color: white;
+  text-align: left;
+  padding: 0px 20px;
+  margin: 5px 0;
+  height: 48px;
+}
+.toast__content {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.toast-animation-enter {
+  opacity: 0.01;
+  height: 0;
+}
+.toast-animation-enter-active {
+  opacity: 1;
+  height: 48px;
+  transition: opacity 300ms ease-in, height 300ms ease;
+}
+.toast-animation-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+.toast-animation-exit-active {
+  opacity: 0.01;
+  transform: translateX(40px);
+  transition: opacity 200ms ease-in 100ms, transform 300ms ease-in;
+}

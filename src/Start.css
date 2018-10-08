@@ -1,0 +1,57 @@
+.player-list {
+  display: block;
+  max-width: 100%;
+  width: 300px;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+.player-list__item {
+  text-align: left;
+  border: 1px solid lightgray;
+  overflow: hidden;
+  margin: 10px 0;
+}
+.player-list__item__name {
+  display: inline-block;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 10px;
+}
+.player-list__item__status {
+  display: inline-block;
+  margin: 0px 10px 10px 20px;
+  color: lightgray;
+  font-style: italic;
+}
+.player-list__item__status--is-challenged {
+  color: lightblue;
+}
+.player-list__item__status--challenged-me {
+  color: tomato;
+}
+.player-list__item__status--is-challenged > button,
+.player-list__item__status--challenged-me > button {
+  margin-left: 10px;
+}
+
+.player-list-animation-enter {
+  opacity: 0.01;
+  max-height: 0;
+}
+.player-list-animation-enter-active {
+  opacity: 1;
+  max-height: 100px;
+  transition: opacity 300ms ease-in, max-height 300ms ease;
+}
+.player-list-animation-exit {
+  opacity: 1;
+  max-height: 100px;
+}
+.player-list-animation-exit-active {
+  opacity: 0.01;
+  max-height: 0;
+  transition: opacity 200ms ease-in 100ms, max-height 300ms ease-in;
+}
