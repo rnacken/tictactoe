@@ -28,7 +28,7 @@ class App extends Component {
             </React.Fragment>
           }
         </header>
-        <h1 className="App-title">Tic tac toe</h1>
+        <h1 className="App-title">Tic tac toe 2</h1>
             <Switch>
               <Route exact path='/' component={Start}/>
               <Route path='/game' component={Game}/>

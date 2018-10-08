@@ -2,7 +2,7 @@
   "name": "ttt",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://rnacken.github.io",
+  "homepage": "https://rnacken.github.io/tictactoe/",
   "dependencies": {
     "firebase": "^5.4.2",
     "prop-types": "^15.6.2",
@@ -19,5 +19,8 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.0.1"
   }
 }

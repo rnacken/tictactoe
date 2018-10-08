@@ -8,7 +8,7 @@ import App from './App';
 import history from './history';
 
 ReactDOM.render((
-  <Router history={history}>
+  <Router history={history} basename={'/tictactoe'}>
     <AppProvider>
       <Consumer>
         {ctx => <App ctx={ctx} /> }
