@@ -39,7 +39,7 @@ class App extends Component {
         <footer className="App-footer">
           <h5>
             <small>This is a project by <a href="mailto:info@nacken.ru">Ru Nacken</a><br />
-            The goal is to get the hang of React<br />
+            The goal is to get the hang of React (+ router, transitions) and Firebase<br /><br />
             <a href="https://github.com/rnacken/tictactoe" target="_blank">
               <img src={githubLogo} width="30" height="30" alt="github-logo" title="Github" />
             </a>
