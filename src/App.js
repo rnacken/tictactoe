@@ -7,6 +7,7 @@ import Start from './Start';
 import Toasts from './Toasts/Toasts';
 
 import PropTypes from 'prop-types';
+import githubLogo from './assets/img/github-logo.svg';
 
 class App extends Component {
 
@@ -28,13 +29,23 @@ class App extends Component {
             </React.Fragment>
           }
         </header>
-        <h1 className="App-title">Tic tac toe 2</h1>
-            <Switch>
-              <Route exact path='/' component={Start}/>
-              <Route path='/game' component={Game}/>
-              <Redirect to='/' />
-            </Switch>
-            <Toasts />
+        <h1 className="App-title">Tic tac toe, baby!</h1>
+        <Switch>
+          <Route exact path={`${process.env.PUBLIC_URL}/`} component={Start}/>
+          <Route path={`${process.env.PUBLIC_URL}/game`} component={Game}/>
+          <Redirect to='/' />
+        </Switch>
+        <Toasts />
+        <footer className="App-footer">
+          <h5>
+            <small>This is a project by <a href="mailto:info@nacken.ru">Ru Nacken</a><br />
+            The goal is to get the hang of React<br />
+            <a href="https://github.com/rnacken/tictactoe" target="_blank">
+              <img src={githubLogo} width="30" height="30" alt="github-logo" title="Github" />
+            </a>
+          </small>
+        </h5>
+        </footer>
       </div>
     );
   }

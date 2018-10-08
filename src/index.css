@@ -8,7 +8,7 @@ body {
 
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
   font-family: 'IBM Plex Mono', monospace;
   font-weight: 200;
   font-style: italic;
@@ -16,9 +16,17 @@ h1, h2, h3, h4 {
 h1 {
   font-size: 40px;
 }
-h3, h4 {
+h3, h4, h5 {
   /* font-style: normal; */
   font-weight: 400;
+}
+
+a {
+  color: tomato;
+}
+a:hover,
+a:active {
+  text-decoration: none;
 }
 
 input[type=text] {

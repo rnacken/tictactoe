@@ -23,3 +23,9 @@
   opacity: 1;
   transition: opacity 250ms ease-in;
 }
+
+.App-footer {
+  margin-top: 50px;
+  border-top: 1px solid gray;
+  padding: 10px;
+}

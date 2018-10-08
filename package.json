@@ -2,7 +2,7 @@
   "name": "ttt",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://rnacken.github.io/tictactoe/",
+  "homepage": "https://rnacken.github.io/tictactoe",
   "dependencies": {
     "firebase": "^5.4.2",
     "prop-types": "^15.6.2",

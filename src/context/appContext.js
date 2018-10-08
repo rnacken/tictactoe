@@ -40,7 +40,8 @@ export class AppProvider extends Component {
 
     constructor(props) {
       super(props);
-      history.push('/');  // set route to home
+      console.log('init game to home: ',process.env.PUBLIC_URL);
+      history.push(`${process.env.PUBLIC_URL}/`);  // set route to home
     }
 
     componentDidMount() {
@@ -185,10 +186,12 @@ export class AppProvider extends Component {
         });
 
       }
-      history.push('/');
-      auth.currentUser.delete();
+      history.push(`${process.env.PUBLIC_URL}/`);
+      if (auth.currentUser) {
+        auth.currentUser.delete();
+      }
       auth.signOut().then(() => {
-        //this.subscribePlayers();  
+        //this.subscribePlayers();
         loggedIn = false;
       });
     }
@@ -296,7 +299,7 @@ export class AppProvider extends Component {
         }
         // Todo: check if user is already in a game.
         if (this.state.player.game) {
-          history.push('/game');
+          history.push(`${process.env.PUBLIC_URL}/game`);
         }
       });
     }
@@ -362,7 +365,7 @@ export class AppProvider extends Component {
         game: game.key,
         updated: new Date().getTime()
       });
-      history.push('/game');
+      history.push(`${process.env.PUBLIC_URL}/game`);
     }
 
     cancelChallenge(targetPlayer) {
@@ -404,7 +407,7 @@ export class AppProvider extends Component {
                 this.checkIdleGames(this.state.players);
                 this.checkWinCondition(this.state.game.tiles);
               })
-              history.push('/game');
+              history.push(`${process.env.PUBLIC_URL}/game`);
             } else {
               // remove game-state from database
               database.ref(`players/${this.state.player.id}/game`).remove();
@@ -434,7 +437,7 @@ export class AppProvider extends Component {
           game: null
         });
         this.subscribePlayers();
-        history.push('/');
+        history.push(`${process.env.PUBLIC_URL}/`);
       }
     }
 
