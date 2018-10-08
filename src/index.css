@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-@import url('https://fonts.googleapis.com/icon?family=IBM+Plex+Mono:200,400');
+@import url('https://fonts.googleapis.com/icon?family=IBM+Plex+Mono:200i,400');
 
 body {
   margin: 0;
@@ -8,15 +8,30 @@ body {
 
 }
 
-h1, h2 {
+h1, h2, h3, h4 {
   font-family: 'IBM Plex Mono', monospace;
+  font-weight: 200;
+  font-style: italic;
+}
+h1 {
+  font-size: 40px;
+}
+h3, h4 {
+  /* font-style: normal; */
   font-weight: 400;
 }
-h2 {
-  font-weight: 200;
+
+input[type=text] {
+  border: 1px solid gray;
+  height: 28px;
+  padding-left: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
-button {
+button, input[type=submit] {
+  position: relative;
+  display: inline-block;
   border: 0;
   box-shadow: none;
   outline: 0;
@@ -28,8 +43,14 @@ button {
   transition: background-color 200ms;
 }
 button:hover,
-button:active {
+button:active, input[type=submit]:hover, , input[type=submit]:active {
   background-color: #ddd;
+}
+button:disabled,
+button:disabled:hover,
+button:disabled:active {
+  background-color: #eee;
+  cursor: not-allowed;
 }
 
 .app-message--cross > span {

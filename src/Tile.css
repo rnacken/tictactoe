@@ -11,22 +11,22 @@
 .tile-content--:hover {
   background-color: #ddd;
 }
-.tile-content--cross {
+.tile-content--2 {
   background-color: tomato;
 }
-.tile-content--cross:after {
+.tile-content--2:after {
     position: absolute;
-    top: 20px; left: 20px;
+    top: 15px; left: 20px;
     font-family: "Material Icons";
     content: "\e5cd";
     font-size: 60px;
 }
-.tile-content--circle {
+.tile-content--1 {
   background-color: lightblue;
 }
-.tile-content--circle:after {
+.tile-content--1:after {
     position: absolute;
-    top: 20px; left: 20px;
+    top: 15px; left: 20px;
     font-family: "Material Icons";
     content: "\e836";
     font-size: 60px;

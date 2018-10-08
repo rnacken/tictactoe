@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Board.css';
 import Tile from './Tile';
-import Consumer from './appContext';
+import Consumer from './context/appContext';
 
 class Board extends Component {
 
@@ -9,8 +9,8 @@ class Board extends Component {
     return (
       <div className="Board">
         <Consumer>
-        {game => {
-          return (game.tiles.map((item, i) => <Tile key={i} tile={item}></Tile>));
+        {ctx => {
+          return (ctx.state.game.tiles.map(item => <Tile key={item.id} tile={item}></Tile>));
         }}
         </Consumer>
       </div>
