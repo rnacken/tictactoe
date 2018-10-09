@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import './App.css';
 import { Switch, Route, Redirect } from 'react-router-dom'
+import PropTypes from 'prop-types';
 
-import Game from './Game';
-import Start from './Start';
+import Game from './scenes/Game/';
+import Start from './scenes/Start/';
 import Toasts from './Toasts/Toasts';
 
-import PropTypes from 'prop-types';
 import githubLogo from './assets/img/github-logo.svg';
+import './App.css';
+
 
 class App extends Component {
 
@@ -42,7 +43,7 @@ class App extends Component {
           <h5>
             <small>This is a project by <a href="mailto:info@nacken.ru">nacken.ru</a><br />
             The goal is to get the hang of React (+ router, transitions) and Firebase<br /><br />
-            <a href="https://github.com/rnacken/tictactoe" target="_blank">
+            <a href="https://github.com/rnacken/tictactoe" target="_blank" rel="noopener noreferrer">
               <img src={githubLogo} width="30" height="30" alt="github-logo" title="Github" />
             </a>
           </small>

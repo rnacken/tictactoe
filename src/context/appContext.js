@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import database, { auth } from './firebase.js';
-import history from './../history';
+import history from './history';
 
 const { Provider, Consumer } = React.createContext();
 export default Consumer;
@@ -40,7 +40,6 @@ export class AppProvider extends Component {
 
     constructor(props) {
       super(props);
-      console.log('init game to home: ',process.env.PUBLIC_URL);
       history.push(`${process.env.PUBLIC_URL}/`);  // set route to home
     }
 
@@ -98,6 +97,12 @@ export class AppProvider extends Component {
           ...this.state.game,
           tiles: newTiles,
           turn: (this.state.game.turn === 1)? 2 : 1
+        });
+        database.ref(`players/${this.state.game.player1}`).update({
+          updated: new Date().getTime()
+        });
+        database.ref(`players/${this.state.game.player2}`).update({
+          updated: new Date().getTime()
         });
       }
     }
@@ -428,6 +433,12 @@ export class AppProvider extends Component {
           winner: this.state.game.player1IsMe ? 2 : 1,
           conceded: true
         });
+        database.ref(`players/${this.state.game.player1}`).update({
+          updated: new Date().getTime()
+        });
+        database.ref(`players/${this.state.game.player2}`).update({
+          updated: new Date().getTime()
+        });
       }
     }
 
@@ -435,7 +446,8 @@ export class AppProvider extends Component {
       if (this.state.player && this.state.player.id) {
         database.ref(`players/${this.state.player.id}`).update({
           ...this.state.player,
-          game: null
+          game: null,
+          updated: new Date().getTime()
         });
         this.subscribePlayers();
         history.push(`${process.env.PUBLIC_URL}/`);
@@ -449,6 +461,12 @@ export class AppProvider extends Component {
         turn: randomTurn, // random choose 1 or 2
         tiles: initialState.game.tiles,
         winner: null
+      });
+      database.ref(`players/${this.state.game.player1}`).update({
+        updated: new Date().getTime()
+      });
+      database.ref(`players/${this.state.game.player2}`).update({
+        updated: new Date().getTime()
       });
     }
 

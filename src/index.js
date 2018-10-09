@@ -5,7 +5,7 @@ import './index.css';
 import Consumer, { AppProvider } from "./context/appContext";
 import App from './App';
 
-import history from './history';
+import history from './context/history';
 
 ReactDOM.render((
   <Router history={history} basename={'/tictactoe'}>
