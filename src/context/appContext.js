@@ -153,7 +153,6 @@ export class AppProvider extends Component {
 
     login(e) {
       e.preventDefault();
-      console.log('fghsj')
       // check if myName is not already taken
       if (this.state.players && this.state.players.filter(item => item.displayName === this.state.myName).length > 0) {
         this.addToast(`Name ${this.state.myName} already taken`);
@@ -173,7 +172,9 @@ export class AppProvider extends Component {
 
     logout() {
       if (this.state.player && this.state.player.id) {
-        this.concedeGame();
+        if (this.state.game && !this.state.game.winner) {
+          this.concedeGame();
+        }
         this.removePlayer(this.state.player.id); // remove from database
         // remove locally
         this.setState({
