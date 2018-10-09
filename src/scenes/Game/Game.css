@@ -1,0 +1,13 @@
+
+.Players {
+  margin: 0 auto 20px;
+}
+.players__player {
+  padding: 5px 10px;
+}
+.players__player--player1 {
+  background-color: lightblue;
+}
+.players__player--player2 {
+  background-color: tomato;
+}
