@@ -8,11 +8,13 @@ class Board extends Component {
   render() {
     return (
       <div className="Board">
-        <Consumer>
-        {ctx => {
-          return (ctx.state.game.tiles.map(item => <Tile key={item.id} tile={item}></Tile>));
-        }}
-        </Consumer>
+        <div className="Board-tiles">
+          <Consumer>
+          {ctx => {
+            return (ctx.state.game.tiles.map(item => <Tile key={item.id} tile={item}></Tile>));
+          }}
+          </Consumer>
+        </div>
       </div>
     );
   }

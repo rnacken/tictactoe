@@ -29,16 +29,18 @@ class App extends Component {
             </React.Fragment>
           }
         </header>
-        <h1 className="App-title">Tic tac toe, baby!</h1>
-        <Switch>
-          <Route exact path={`${process.env.PUBLIC_URL}/`} component={Start}/>
-          <Route path={`${process.env.PUBLIC_URL}/game`} component={Game}/>
-          <Redirect to='/' />
-        </Switch>
-        <Toasts />
+        <main className="App-main">
+          <h1 className="App-title">Tic tac toe, baby!</h1>
+          <Switch>
+            <Route exact path={`${process.env.PUBLIC_URL}/`} component={Start}/>
+            <Route path={`${process.env.PUBLIC_URL}/game`} component={Game}/>
+            <Redirect to='/' />
+          </Switch>
+          <Toasts />
+        </main>
         <footer className="App-footer">
           <h5>
-            <small>This is a project by <a href="mailto:info@nacken.ru">Ru Nacken</a><br />
+            <small>This is a project by <a href="mailto:info@nacken.ru">nacken.ru</a><br />
             The goal is to get the hang of React (+ router, transitions) and Firebase<br /><br />
             <a href="https://github.com/rnacken/tictactoe" target="_blank">
               <img src={githubLogo} width="30" height="30" alt="github-logo" title="Github" />
